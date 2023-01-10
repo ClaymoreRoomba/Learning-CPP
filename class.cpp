@@ -71,5 +71,3 @@ int main()
     std::cout << "Area: " << area << std::endl;  // Output: "Area: 200"
 
 }
-
-//testing
