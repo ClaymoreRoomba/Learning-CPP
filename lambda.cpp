@@ -41,8 +41,8 @@ int max = 60;
 vec.erase(
 
     std::remove_if(vec.begin(), vec.end(),
-        // anonymous function passed as a parameter
-        // takes an element in, returns type bool
+
+        // can now read outside variables (max)
         [=](int element) -> bool
         {
             return element > max; 
@@ -57,8 +57,7 @@ printVec(vec, "After erase #2");
 vec.erase(
 
     std::remove_if(vec.begin(), vec.end(),
-        // anonymous function passed as a parameter
-        // takes an element in, returns type bool
+        // can now edit outside variables
         [&](int element) -> bool
         {
             max = 10;
@@ -69,7 +68,7 @@ vec.erase(
     
 vec.end());
 
-printVec(vec, "After erase #2");
+printVec(vec, "After erase #3");
 
 /*
 
