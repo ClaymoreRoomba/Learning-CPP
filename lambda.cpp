@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 // Lambda functions are just anonymous functions
 
 template<typename T>
