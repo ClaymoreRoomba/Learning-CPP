@@ -1,0 +1,7 @@
+#ignore all outs
+*.out
+*.exe
+
+
+.vscode
+main.dSYM
