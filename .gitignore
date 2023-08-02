@@ -1,6 +1,7 @@
 #ignore all outs
 *.out
 *.exe
+test.cpp
 
 
 .vscode
