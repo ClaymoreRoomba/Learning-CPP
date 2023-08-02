@@ -1,15 +1,16 @@
 #include <iostream>
-using namespace std;
 
 #define PI 3.1415926535897932384626
 #define test "test"
-#define print cout <<
-#define nl << endl
+#define print std::cout <<
+#define nl << std::endl
+#define out(s) std::cout << s << std::endl;
 
 int main(){
-    cout << PI << endl;
-    cout << PI + 1 << endl;
-    cout << test << " is being tested\n";
+    std::cout << PI << std::endl;
+    std::cout << PI + 1 << std::endl;
+    std::cout << test << " is being tested\n";
     print test nl;
     print "Easier code" nl;
+    out("crazy");
  }

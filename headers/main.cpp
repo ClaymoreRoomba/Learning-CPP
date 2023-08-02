@@ -1,11 +1,20 @@
 #include <iostream>
 #include "log.h"
+#include "Person.h"
 using namespace std;
 
 int main(){
 
     InitLog();
     Log("Hello World");
+    Person theBest("Filip", 18);
+    Person a = Person("Johan", 57);
+    Person b = Person("Lene", 50);
+    theBest.addParents(&a, &b);
+
+    theBest.introduce();
+    theBest.birthday();
+
     cin.get();
 }
 /*

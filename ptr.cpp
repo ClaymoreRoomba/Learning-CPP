@@ -39,17 +39,16 @@ int main(){
 
     Entity* ePtr = new Entity("Player1");
 
-    // std::cout << (*ePtr).getName() << std::endl;
-    std::cout << ePtr->getName() << std::endl;
-        
-    const int* a = new int;
-    // *a = 2; cannot redefine value stored at address
-    // however, can reassign address
-    a = &x;
+// std::cout << (*ePtr).getName() << std::endl;
+std::cout << ePtr->getName() << std::endl;
+    
+const int* a = new int;
+// *a = 2; cannot redefine value stored at address
+// however, can reassign address
+a = &x;
 
-    int* const b = new int;
-    *b = 2;
-    // b = &x; would throw an err,
-    // now ptr cannot be changed, but val can
+int* const b = new int;
+*b = 2;
+// b = &x; now ptr cannot be changed
 
 }
