@@ -1,33 +1,55 @@
 #include <iostream>
-using namespace std;
+#include <vector>
+#include <functional>
 
-//can be declared first so that it can be used (line 11)
-float sum(float x, float y);
+// Return values
+float sum(float x, float y) { return x + y; }
 
-//default parameter, if no argument is provided for y, it will default to 5
-void print(int x, int y = 5){
-
-    cout << "The input number was " << x << endl;
-    cout << "When added with " << y << " it is " << sum(x,y) << endl;
-
+// Can provide default args
+void print(float x, float y = 5)
+{
+    std::cout << "x is " << x << ", and y is: " << y << std::endl;
+}
+// same name, but will decide which fn to call based on arguments
+void print(std::string str)
+{
+    std::cout << str << std::endl;
 }
 
-//overloaded function, will choose which function based off of parameter provided
-//If string is provided, this bottom func will be executed
-void print(string str){
-    cout << str << endl;
+void HelloWorld()
+{
+    std::cout << "Hello World!" << std::endl;
 }
 
-//function body defined later
-float sum(float x, float y){
-    return (x + y);
+void ForEach(const std::vector<int>& values, void(*func)(int))
+{
+    for(int value : values)
+        func(value);
 }
 
 int main(){
+    // * Function pointers
+    auto function = &HelloWorld;
+    function();
 
-    print(10);
-    print(10, 10);
+    // This syntax is confusing
+    float (*sumFn)(float, float); // = sum
+    sumFn = sum;
+    print(2.1f, 3.5f);
+    std::cout << "The sum is: " << sumFn(2.1f, 3.5f) << std::endl;
+    // Therefore can do this instead:
+    typedef void(*PrintFunction)(std::string);
+    PrintFunction printFn = print;
+    printFn("Printing using function pointers!\n");
 
-    print("cool string");
+    std::vector<int> values = { 1, 5, 4, 2, 3 };
+    ForEach(values, [](int value) { std::cout << "Value: " << value << std::endl; });
 
+    // Using <functional> lib:
+    std::function<float(float, float)> Product = [](float v1, float v2) -> float
+    {
+        return v1 * v2;
+    };
+
+    std::cout << "The product of 2.2 and 5.5 is: " << Product(2.2f, 5.5f) << std::endl;
 }
