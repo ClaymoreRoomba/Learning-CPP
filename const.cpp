@@ -10,7 +10,7 @@ class Entity{
     public:
         // states that this function will not modify any values
         std::pair<int, int> getCoords() const {
-            temp = 5;
+            temp = 5; // temp is mutable, therefore can still be modified
             return std::make_pair(x, y);
         }
 };
@@ -18,9 +18,7 @@ class Entity{
 // As this entity parameter is declared as constant, it will only call
 // functions that surely do not modify the entity
 int getEntX(const Entity &entity){
-
     return entity.getCoords().first;
-
 }
 
 int main(){
@@ -36,6 +34,8 @@ int main(){
     int* const b = new int;
     *b = 2;
     // b = &x; now ptr cannot be changed
+
+    // ! const keeps whatever is to the left of it constant by defualt
 
     Entity e1;
     std::cout << getEntX(e1) << std::endl;
