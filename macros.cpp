@@ -2,6 +2,7 @@
 
 #define PI 3.14
 #define LOG(x) std::cout << x << std::endl
+#define VAR_NAME(x) #x
 
 /* Now can change from debug mode to not
 function will only be called when in debug mode
@@ -19,4 +20,6 @@ int main(){
     std::cout << PI << std::endl;
     LOG("Hello World!");
     DEBUG_LOG("Debug Statement!");
+    int x = 5;
+    std::cout << VAR_NAME(x) << " is " << x << std::endl;
 }
