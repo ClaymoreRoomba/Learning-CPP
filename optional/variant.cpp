@@ -7,7 +7,7 @@ enum class ErrorCode {
     None, NotFound, NoAccess
 };
 
-std::variant <String, ErrorCode> ReadFileAsString() {
+std::variant <String, ErrorCode> FileToString() {
     // Just an example function
     // Now could return either a String or ErrorCode
     return {};

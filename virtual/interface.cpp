@@ -10,8 +10,8 @@ class Printable{
 
 class Entity : public Printable {
     public:
-    virtual std::string GetName() { return "Entity"; };
-    std::string GetClassName() override { return "Entity"; };
+    virtual std::string GetName() { return "Entity"; }
+    std::string GetClassName() override { return "Entity"; }
 
 };
 
@@ -22,7 +22,7 @@ class Player : public Entity {
     Player(std::string _name) : name(_name) {}
 
     std::string GetName() override { return name; }
-    std::string GetClassName() override { return "Player"; };
+    std::string GetClassName() override { return "Player"; }
 };
 
 void printName(Entity* entity){
